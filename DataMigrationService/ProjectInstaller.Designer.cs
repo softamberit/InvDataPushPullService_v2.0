@@ -30,6 +30,7 @@ namespace InvDataAutoSyncService
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ProjectInstaller));
             this.serviceProcessInstaller1 = new System.ServiceProcess.ServiceProcessInstaller();
             this.serviceInstaller1 = new System.ServiceProcess.ServiceInstaller();
             // 
@@ -41,11 +42,9 @@ namespace InvDataAutoSyncService
             // 
             // serviceInstaller1
             // 
-            this.serviceInstaller1.Description = "1. Employee data from ABx Table hr_Employment TO Inventory Table AbxEmployeeDetails." +
-                                                 "2. Customer data from ABx Table sbm_CustomerLink TO Inventory Table AbxCustomerDetails" +
-                                                 "3. Customer data from BillGeniX Table CustomerMaster TO Inventory Table BillgenixCustomerDetails";
-            this.serviceInstaller1.DisplayName = "Abx to Inventory Data Sync";
-            this.serviceInstaller1.ServiceName = "Abx to Inventory Data Sync";
+            this.serviceInstaller1.Description = resources.GetString("serviceInstaller1.Description");
+            this.serviceInstaller1.DisplayName = "Abx-Billgenix-Inventory Data Sync";
+            this.serviceInstaller1.ServiceName = "Abx-Billgenix-Inventory Data Sync";
             this.serviceInstaller1.StartType = System.ServiceProcess.ServiceStartMode.Automatic;
             // 
             // ProjectInstaller
